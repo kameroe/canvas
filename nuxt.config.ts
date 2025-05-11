@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/image',
     '@nuxt/scripts',
+    '@nuxthub/core',
   ],
 
   imports: {
@@ -129,5 +130,12 @@ export default defineNuxtConfig({
 
   ogImage: {
     zeroRuntime: true,
+  },
+  vite: {
+    server: {
+      fs: {
+        allow: ['.'], // Autorise l'accès aux fichiers du projet
+      },
+    },
   },
 })

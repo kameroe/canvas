@@ -1,6 +1,7 @@
 import { defineCollection, z } from '@nuxt/content'
 import { asSeoCollection } from '@nuxtjs/seo/content'
 
+
 const commonContentSchema = z.object({
   title: z.string().nonempty(),
   description: z.string().nonempty(),
@@ -45,11 +46,7 @@ export const collections = {
   content_en: defineCollection(
     asSeoCollection({
       type: 'page',
-      source: {
-        include: 'en/**/*.md',
-        exclude: ['en/articles/*.md'],
-        prefix: '/en',
-      },
+      source: '**/*.md',
       schema: commonContentSchema,
     }),
   ),
